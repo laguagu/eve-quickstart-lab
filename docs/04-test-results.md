@@ -165,3 +165,102 @@ npm run ask "Tee kuukausiraportti myynnistä tiedostosta data/myynti-2026.csv"
 # needs Docker Desktop running:
 npm run ask "Tee /workspace/report.py joka käyttää pandas-kirjastoa. Aja se. Jos jokin ei onnistu, korjaa ja yritä uudelleen."
 ```
+
+---
+
+## 6. Self-hosted EU agent (`eu-agent/`)
+
+A second agent in this repo, configured for a client build where data must stay in the
+EU. Model: **Azure OpenAI** (`gpt-5.4`) as a direct AI SDK provider, no AI Gateway.
+Sandbox: **Docker, `networkPolicy: "deny-all"`**.
+
+### 6a. Full loop in a network-isolated sandbox — dev server
+
+Prompt: *"Analysoi asiakastapahtumat: laske liikevaihto kategorioittain ja kuukausittain.
+Kirjoita analyysi Python-skriptiksi /workspace/analyysi.py, aja se, ja korjaa kunnes se
+toimii. Noudata eu-tarkistus-skillin sääntöjä, myös käsittelylokia."*
+
+Result — the agent wrote the script, ran it, wrote the processing log, and read the log
+back through the authored `kasittelyloki` tool:
+
+| Category | Revenue |
+| --- | ---: |
+| konsultointi | 19 120,50 € |
+| ohjelmisto | 996,00 € |
+| tuki | 179,80 € |
+| **Total** | **20 296,30 €** (8 transactions) |
+
+Processing log entry: `2026-09-20T16:27:25 analyysi.py 8`
+
+Checked by hand: 249 + 1180.50 + 249 + 89.90 + 2340 + 89.90 + 498 + 15600 = 20296.30 ✓
+
+The skill's rule *"never repeat customer identifiers"* was followed — no `A-17` style IDs
+appeared in the answer, only aggregates.
+
+`tokens: in=11043 out=560 cacheRead=10752`
+
+### 6b. Production build and self-hosted server
+
+```
+$ npm exec -- eve build
+[BUILD] built output at C:\dev-tests\eve-lab\eu-agent\.output      # 11 MB Nitro server
+
+$ PORT=3100 npm exec -- eve start --host 127.0.0.1
+eve: initialized 1 sandbox template (0 reused, 1 built).
+[START] server listening at http://127.0.0.1:3100/
+```
+
+### 6c. Route auth is enforced in production
+
+The first attempt against the production server failed, which is the correct behaviour —
+`localDev()` does not authenticate outside `eve dev`, and the scaffold's
+`placeholderAuth()` rejects production traffic:
+
+```
+{"code":"unauthorized","error":"Authorization is required for this route.","ok":false}
+```
+
+After replacing the channel auth with `httpBasic()`:
+
+```
+POST /eve/v1/session                   -> HTTP 401
+POST /eve/v1/session -u agent:wrong    -> HTTP 401
+POST /eve/v1/session -u agent:<correct> -> 200
+```
+
+The authenticated turn then ran end to end against the **production** server:
+
+```
+→ todo       3 items planned
+→ bash       cd /workspace && find . -maxdepth 3 -type f
+→ read_file  /workspace/data/asiakastapahtumat.csv
+→ write_file /workspace/tarkistus.py
+→ bash       python3 /workspace/tarkistus.py
+←            exit 0
+             uniikit_asiakkaat=4
+             suurin_yksittainen_tapahtuma_eur=15600.00
+```
+
+Verified by hand: the CSV contains A-17, A-04, A-31, A-52 — four distinct customers ✓
+
+### 6d. One typed API mismatch
+
+```
+agent/channels/eve.ts(11,7): error TS2739: Type '{ username: string; password: string; }[]'
+is missing the following properties from type 'HttpBasicCredentials': username, password
+```
+
+`httpBasic()` takes a single credentials object, not an array. The docs write it as
+`httpBasic(credentials, { realm })` — "credentials" plural reads like a list. Typecheck
+caught it before it shipped.
+
+## 7. HarnessAgent — typechecked, not executed
+
+`harness-test/harness-eu.ts` compiles against `@ai-sdk/harness` 1.0.117,
+`@ai-sdk/harness-claude-code` 1.0.121 and `@ai-sdk/sandbox-vercel` 1.0.117, including
+`region: "fra1"` and `failoverRegions: ["arn1"]`.
+
+It was **not run**: it requires a Vercel login (`vercel whoami` reported
+`"loggedIn": false`) and an Anthropic credential. Everything in
+[06-eu-data-residency.md](06-eu-data-residency.md) about Vercel Sandbox regions comes
+from the installed packages' type definitions, not from a live run.

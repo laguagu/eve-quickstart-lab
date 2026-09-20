@@ -70,6 +70,14 @@ agent/
   channels/eve.ts                  auth policy for the HTTP API
 scripts/ask.mjs                    HTTP client used for the test runs
 docs/                              notes: sandbox, skills, comparison, raw results
+
+eu-agent/                          second agent: self-hosted, EU data residency
+  agent/agent.ts                   Azure OpenAI as a direct provider (no AI Gateway)
+  agent/sandbox/sandbox.ts         Docker pinned, networkPolicy: deny-all
+  agent/channels/eve.ts            httpBasic auth (no Vercel OIDC)
+  agent/skills/eu-tarkistus/       data-handling rules the agent must follow
+harness-test/harness-eu.ts         HarnessAgent + Vercel Sandbox pinned to fra1
+                                   (typechecks; not executed — needs a Vercel login)
 ```
 
 ## Docs
@@ -81,6 +89,7 @@ docs/                              notes: sandbox, skills, comparison, raw resul
 | [docs/03-eve-vs-ai-sdk-7.md](docs/03-eve-vs-ai-sdk-7.md) | When to use which |
 | [docs/04-test-results.md](docs/04-test-results.md) | Every test run, with raw output |
 | [docs/05-agentic-loop.md](docs/05-agentic-loop.md) | The write → run → fix loop, and what it needs |
+| [docs/06-eu-data-residency.md](docs/06-eu-data-residency.md) | Keeping client data in the EU: eve vs. HarnessAgent |
 
 ## Source of truth
 

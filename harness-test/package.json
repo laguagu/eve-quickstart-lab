@@ -1,0 +1,21 @@
+{
+  "name": "harness-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "type": "module",
+  "dependencies": {
+    "@ai-sdk/harness": "^1.0.117",
+    "@ai-sdk/harness-claude-code": "^1.0.121",
+    "@ai-sdk/sandbox-vercel": "^1.0.117",
+    "ai": "^7.0.107"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "typescript": "^7.0.2"
+  }
+}
