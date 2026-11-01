@@ -20,7 +20,8 @@ run, `r2`–`r4` and `fixed1`–`fixed4` the repeats, and `node scripts/compare.
 
 Time alone does not separate them on so few runs. Both refused the injection, and both said the data
 holds no tax figures when `total` was read as tax, so the answer's wording moved with the run and not with
-the framework. eve read about 8 500 tokens from the prompt cache on each question without being asked to.
+the framework. In the first run eve read 6 800–8 500 input tokens a question from the prompt cache, and the
+AI SDK script none.
 
 `results-durability.json` and `results-durability-events.json` are the first kill of a running turn.
 
