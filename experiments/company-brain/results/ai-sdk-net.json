@@ -1,0 +1,39 @@
+{
+ "id": "net",
+ "text": "Mikä oli nettoliikevaihtomme viime kuussa?",
+ "ms": 11169,
+ "usage": {
+  "inputTokens": 10675,
+  "inputTokenDetails": {
+   "noCacheTokens": 10675,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 1829,
+  "outputTokenDetails": {
+   "textTokens": 845,
+   "reasoningTokens": 984
+  },
+  "totalTokens": 12504
+ },
+ "steps": 4,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select min(order_date) as first_order_date, max(order_date) as last_order_date, status, count(*) as order_count, round(sum(amount), 2) as total_payments_aud from main.orders group by status order by status"
+   }
+  }
+ ],
+ "reply": "En voi vielä antaa yksiselitteistä lukua nettoliikevaihdolle. Aineistossa ei ole erillistä nettoliikevaihdon laskentaa eikä tietoja palautusten rahavirroista, joten pelkkä maksujen summa ei ole sama asia kuin nettoliikevaihto.\n\n**Aineistossa on saatavilla:** tilausten maksut tilan mukaan (AUD, koko aineiston ajalta):\n\n| Tilauksen tila | Tilausten määrä | Maksut yhteensä |\n|---|---|---|\n| Valmis (completed) | 67 | 1 103 |\n| Lähetetty (shipped) | 13 | 198 |\n| Kirjattu (placed) | 13 | 284 |\n| Palautus odottaa (return_pending) | 2 | 38 |\n| Palautettu (returned) | 4 | 49 |\n| **Yhteensä** | **99** | **1 672** |\n\n**Aikajakso:** Aineisto kattaa tilaukset 1.1.2018–9.4.2018. Se on historiallinen esimerkkiaineisto, joten siinä ei ole tietoja viime kuukaudelta (syyskuu 2026). Käytetäänkö viimeisintä täyttä kuukautta, eli maaliskuuta 2018?\n\n**Tarvitsen vielä kaksi tarkennusta:**\n1. **Mikä kuukausi?** Vahvistatko maaliskuun 2018, vai haluatko jonkin muun ajanjakson?\n2. **Miten käsitellään palautukset?** Pitäisikö palautetut ja palautuspyynnöt vähentää koko tilauksen summasta? Entä lasketaanko mukaan tilaukset, joita ei ole vielä toimitettu (kirjattu tai lähetetty)?\n\nKun vastaat näihin, lasken luvun."
+}

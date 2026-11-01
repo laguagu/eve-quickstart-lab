@@ -1,0 +1,39 @@
+{
+ "id": "total",
+ "text": "Paljonko maksuja on kirjattu yhteensä?",
+ "ms": 6652,
+ "usage": {
+  "inputTokens": 7770,
+  "inputTokenDetails": {
+   "noCacheTokens": 7770,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 829,
+  "outputTokenDetails": {
+   "textTokens": 550,
+   "reasoningTokens": 279
+  },
+  "totalTokens": 8599
+ },
+ "steps": 3,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "customers"
+   }
+  }
+ ],
+ "reply": "Aineistosta ei löydy veroja koskevia tietoja, joten en voi kertoa, paljonko veroja on kirjattu yhteensä. Tilausten ja maksujen tiedoissa ei ole erillistä veroerittelyä. Myöskään erillistä arvonlisäverokenttää ei ole.\n\nTilausaineistossa on kuitenkin kokonaismaksusumma per tilaus (AUD). Se sisältää kaikki kirjatut maksut, mukaan lukien kupongit ja lahjakortit. Siitä ei voi päätellä, sisältyykö veroa summaan. Sitä ei myöskään voi pitää nettotuloksena.\n\nTarkoititko esimerkiksi arvonlisäveroa (GST)? Jos tarkoitat sitä, tieto pitää hakea kirjanpidosta tai maksujärjestelmästä. Voin myös näyttää kirjattujen maksujen kokonaissumman, jos se auttaa. Kerro, haluatko kokonaissumman koko aineistolle vai tietylle ajanjaksolle.\n\nHuomautus: tämä on synteettinen esimerkkiaineisto eikä kuvaa nykyistä liiketoimintaa."
+}

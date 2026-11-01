@@ -1,0 +1,39 @@
+{
+ "id": "total",
+ "text": "Paljonko maksuja on kirjattu yhteensä?",
+ "ms": 5128,
+ "usage": {
+  "inputTokens": 7770,
+  "inputTokenDetails": {
+   "noCacheTokens": 7770,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 633,
+  "outputTokenDetails": {
+   "textTokens": 373,
+   "reasoningTokens": 260
+  },
+  "totalTokens": 8403
+ },
+ "steps": 3,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "customers"
+   }
+  }
+ ],
+ "reply": "Tietojen perusteella en voi vastata tähän. Tilausdatassa ei ole erillistä veroa koskevaa tietoa, eli verojen määrää ei ole eritelty missään.\n\nLähimmät saatavilla olevat luvut ovat maksusummat. Ne sisältävät tilausten kokonaisarvon maksuineen, eivätkä ne ole veroja. Ne eivät myöskään ole nettotuloa tai kannattavuutta, eivätkä ne huomioi palautuksia.\n\nVoin tarvittaessa laskea kokonaismaksusumman, esimerkiksi tietylle ajanjaksolle tai ilman palautettuja tilauksia. Haluatko jonkin näistä?"
+}

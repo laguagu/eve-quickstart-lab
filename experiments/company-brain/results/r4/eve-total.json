@@ -1,0 +1,3172 @@
+{
+ "id": "total",
+ "text": "Paljonko maksuja on kirjattu yhteensä?",
+ "ms": 7228,
+ "result": {
+  "deliveryId": "40fc0096-d431-4833-931a-e1e688e90ae0",
+  "interactions": [],
+  "outcome": "handled",
+  "reply": "Tämän aineiston tilauskirjauksista ei löydy veroa erillisenä tietona, joten veroja ei voi laskea yhteen. Tilausten kirjauksissa on vain maksetut summat (AUD), joita ei ole eritelty veron ja veronalaisen osuuden mukaan.\n\nVoin kuitenkin laskea muita summia, jos ne auttavat:\n\n- **Kaikkien tilausten maksetut summat yhteensä**, mukaan lukien kuponki- ja lahjakorttimaksut sekä palautetut tilaukset. Tämä ei ole nettotuottoa.\n- **Maksut maksutavoittain**, esimerkiksi luottokortti, kuponki, pankkisiirto ja lahjakortti.\n- **Vain valmiiksi toimitetut tilaukset** (status \"completed\"), jos haluat rajata palautukset ja kesken olevat tilaukset pois.\n\nHuomioi myös, että tämä on historiallista synteettistä esimerkkidataa, ei reaaliaikaista liiketoimintadataa. Jos veroerittely on tarpeen, se täytyy hakea laskutus- tai kirjanpitojärjestelmästä.\n\nHaluatko jonkin näistä yhteenvedoista, ja millä aikavälillä?",
+  "sessionEnded": false,
+  "sessionId": "wrun_01M68D45Q4X1X6EPPK5X38NKCX",
+  "status": "completed"
+ },
+ "events": [
+  {
+   "data": {
+    "runtime": {
+     "agentId": "eve-company-brain-template",
+     "agentName": "eve-company-brain-template",
+     "eveVersion": "1.0.0-rc.1"
+    }
+   },
+   "type": "session.started",
+   "meta": {
+    "at": "2026-10-31T07:17:30.099Z",
+    "endOfLine": false,
+    "position": {
+     "index": 0,
+     "line": 0
+    }
+   }
+  },
+  {
+   "data": {
+    "deliveryId": "40fc0096-d431-4833-931a-e1e688e90ae0",
+    "principal": {
+     "id": "company-brain",
+     "type": "user"
+    },
+    "source": {
+     "channel": "channel:eve"
+    }
+   },
+   "type": "delivery.admitted",
+   "meta": {
+    "at": "2026-10-31T07:17:30.099Z",
+    "endOfLine": true,
+    "position": {
+     "index": 1,
+     "line": 0
+    }
+   }
+  },
+  {
+   "data": {
+    "cause": {
+     "deliveryId": "40fc0096-d431-4833-931a-e1e688e90ae0"
+    },
+    "follows": null,
+    "trace": {
+     "decision": {
+      "action": "record",
+      "recordInputs": true,
+      "recordOutputs": true
+     },
+     "spanId": "0bbdb8bd1d6435e5",
+     "traceFlags": 1,
+     "traceId": "1402050df64e73583dcb549a32aca922"
+    },
+    "turnId": "turn_0"
+   },
+   "type": "turn.started",
+   "scope": {
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:30.102Z",
+    "endOfLine": false,
+    "position": {
+     "index": 0,
+     "line": 1
+    }
+   }
+  },
+  {
+   "data": {
+    "deliveryId": "40fc0096-d431-4833-931a-e1e688e90ae0",
+    "parts": [
+     {
+      "kind": "text",
+      "text": "Paljonko maksuja on kirjattu yhteensä?"
+     }
+    ],
+    "turnId": "turn_0"
+   },
+   "type": "delivery.consumed",
+   "scope": {
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:30.102Z",
+    "endOfLine": true,
+    "position": {
+     "index": 1,
+     "line": 1
+    }
+   }
+  },
+  {
+   "data": {
+    "owner": {
+     "turnId": "turn_0"
+    },
+    "runId": "run_0"
+   },
+   "type": "model.requested",
+   "scope": {
+    "runId": "run_0",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:30.104Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 2
+    }
+   }
+  },
+  {
+   "data": {
+    "attempt": 0,
+    "modelId": "anthropic/claude-haiku-5.5",
+    "runId": "run_0"
+   },
+   "type": "model.started",
+   "scope": {
+    "runId": "run_0",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:30.105Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 3
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "",
+    "kind": "reasoning",
+    "partId": "run_0.0"
+   },
+   "scope": {
+    "runId": "run_0",
+    "turnId": "turn_0"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:30.105Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 4
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "",
+    "partId": "run_0.0"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:30.105Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 5
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_014UEhnJNVGLT1PpbLkhvL8F",
+    "capability": {
+     "kind": "tool",
+     "name": "list_models"
+    },
+    "input": {},
+    "owner": {
+     "runId": "run_0"
+    }
+   },
+   "type": "call.requested",
+   "scope": {
+    "runId": "run_0",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:31.235Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 6
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_014UEhnJNVGLT1PpbLkhvL8F"
+   },
+   "type": "call.started",
+   "scope": {
+    "runId": "run_0",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:31.247Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 7
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_014UEhnJNVGLT1PpbLkhvL8F",
+    "outcome": "completed",
+    "output": {
+     "builtAt": "2026-10-14T15:34:05.056138Z",
+     "models": [
+      {
+       "name": "customers",
+       "relation": "main.customers",
+       "description": "This table has basic information about a customer, as well as some derived facts based on a customer's orders",
+       "grain": "One row per customer, including customers with no orders."
+      },
+      {
+       "name": "orders",
+       "relation": "main.orders",
+       "description": "This table has basic information about orders, as well as some derived facts based on payments",
+       "grain": "One row per order."
+      }
+     ]
+    }
+   },
+   "type": "call.settled",
+   "scope": {
+    "runId": "run_0",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:31.249Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 8
+    }
+   }
+  },
+  {
+   "data": {
+    "finishReason": "tool-calls",
+    "outcome": "completed",
+    "runId": "run_0"
+   },
+   "type": "model.settled",
+   "scope": {
+    "runId": "run_0",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:31.250Z",
+    "endOfLine": false,
+    "position": {
+     "index": 0,
+     "line": 9
+    }
+   }
+  },
+  {
+   "data": {
+    "kind": "model",
+    "owner": {
+     "runId": "run_0"
+    },
+    "usage": {
+     "cacheReadTokens": 6885,
+     "cacheWriteTokens": 0,
+     "inputTokens": 6889,
+     "outputTokens": 104
+    }
+   },
+   "type": "usage.recorded",
+   "scope": {
+    "runId": "run_0",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:31.250Z",
+    "endOfLine": true,
+    "position": {
+     "index": 1,
+     "line": 9
+    }
+   }
+  },
+  {
+   "data": {
+    "owner": {
+     "turnId": "turn_0"
+    },
+    "runId": "run_1"
+   },
+   "type": "model.requested",
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:31.307Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 10
+    }
+   }
+  },
+  {
+   "data": {
+    "attempt": 0,
+    "modelId": "anthropic/claude-haiku-5.5",
+    "runId": "run_1"
+   },
+   "type": "model.started",
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:31.308Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 11
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_01MvHDZLJp9q6AZnN1j1grLP",
+    "delta": "{\"model\": \"orders",
+    "kind": "tool",
+    "name": "get_model"
+   },
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "type": "call.input",
+   "meta": {
+    "at": "2026-10-31T07:17:31.308Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 12
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_01MvHDZLJp9q6AZnN1j1grLP",
+    "delta": "\"}"
+   },
+   "type": "call.input",
+   "meta": {
+    "at": "2026-10-31T07:17:31.308Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 13
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_01MvHDZLJp9q6AZnN1j1grLP",
+    "capability": {
+     "kind": "tool",
+     "name": "get_model"
+    },
+    "input": {
+     "model": "orders"
+    },
+    "owner": {
+     "runId": "run_1"
+    }
+   },
+   "type": "call.requested",
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:32.521Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 14
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_01PzZ8CqjF32RZuUg1cPTgrN",
+    "delta": "{\"model\": \"customers",
+    "kind": "tool",
+    "name": "get_model"
+   },
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "type": "call.input",
+   "meta": {
+    "at": "2026-10-31T07:17:32.521Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 15
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_01PzZ8CqjF32RZuUg1cPTgrN",
+    "delta": "\"}"
+   },
+   "type": "call.input",
+   "meta": {
+    "at": "2026-10-31T07:17:32.521Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 16
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_01PzZ8CqjF32RZuUg1cPTgrN",
+    "capability": {
+     "kind": "tool",
+     "name": "get_model"
+    },
+    "input": {
+     "model": "customers"
+    },
+    "owner": {
+     "runId": "run_1"
+    }
+   },
+   "type": "call.requested",
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:32.529Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 17
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_01MvHDZLJp9q6AZnN1j1grLP"
+   },
+   "type": "call.started",
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:32.541Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 18
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_01PzZ8CqjF32RZuUg1cPTgrN"
+   },
+   "type": "call.started",
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:32.543Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 19
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_01MvHDZLJp9q6AZnN1j1grLP",
+    "outcome": "completed",
+    "output": {
+     "builtAt": "2026-10-14T15:34:05.056138Z",
+     "name": "orders",
+     "relation": "main.orders",
+     "description": "This table has basic information about orders, as well as some derived facts based on payments",
+     "sql": "with order_payments as (\n    select\n        order_id,\n        sum(case when payment_method = 'credit_card' then amount else 0 end) as credit_card_amount,\n        sum(case when payment_method = 'coupon' then amount else 0 end) as coupon_amount,\n        sum(case when payment_method = 'bank_transfer' then amount else 0 end) as bank_transfer_amount,\n        sum(case when payment_method = 'gift_card' then amount else 0 end) as gift_card_amount,\n        sum(amount) as amount\n    from \"jaffle_shop\".\"main\".\"stg_payments\"\n    group by order_id\n)\n\nselect\n    orders.order_id,\n    orders.customer_id,\n    orders.order_date,\n    orders.status,\n    order_payments.credit_card_amount,\n    order_payments.coupon_amount,\n    order_payments.bank_transfer_amount,\n    order_payments.gift_card_amount,\n    order_payments.amount\nfrom \"jaffle_shop\".\"main\".\"stg_orders\" as orders\nleft join order_payments\n    on orders.order_id = order_payments.order_id",
+     "meta": {
+      "grain": "One row per order.",
+      "joins": [
+       "orders.customer_id = customers.customer_id (many orders to one customer)."
+      ],
+      "metrics": {
+       "amount": "Sum of all recorded payments for this order in AUD, including coupons and gift cards, regardless of order status. Not net revenue or profit.",
+       "order_count": "COUNT(*) on orders. For completed orders filter status = 'completed'.",
+       "average_order_amount": "AVG(amount) on orders; excludes NULL amounts."
+      },
+      "caveats": [
+       "No refund ledger, tax breakdown, costs, or payment timestamps are available.",
+       "order_date is the order placement date, not the payment date.",
+       "The bundled seeds are historical synthetic data. Inspect MIN/MAX(order_date) before choosing dates."
+      ]
+     },
+     "dependsOn": [
+      "stg_payments",
+      "stg_orders"
+     ],
+     "columns": [
+      {
+       "name": "order_id",
+       "type": "INTEGER",
+       "description": "This is a unique identifier for an order"
+      },
+      {
+       "name": "customer_id",
+       "type": "INTEGER",
+       "description": "Foreign key to the customers table"
+      },
+      {
+       "name": "order_date",
+       "type": "DATE",
+       "description": "Date (UTC) that the order was placed"
+      },
+      {
+       "name": "status",
+       "type": "VARCHAR",
+       "description": "Orders can be one of the following statuses:\n\n| status         | description                                                                                                            |\n| -------------- | ---------------------------------------------------------------------------------------------------------------------- |\n| placed         | The order has been placed but has not yet left the warehouse                                                           |\n| shipped        | The order has ben shipped to the customer and is currently in transit                                                  |\n| completed      | The order has been received by the customer                                                                            |\n| return_pending | The customer has indicated that they would like to return the order, but it has not yet been received at the warehouse |\n| returned       | The order has been returned by the customer and received at the warehouse                                              |"
+      },
+      {
+       "name": "credit_card_amount",
+       "type": "DOUBLE",
+       "description": "Amount of the order (AUD) paid for by credit card"
+      },
+      {
+       "name": "coupon_amount",
+       "type": "DOUBLE",
+       "description": "Amount of the order (AUD) paid for by coupon"
+      },
+      {
+       "name": "bank_transfer_amount",
+       "type": "DOUBLE",
+       "description": "Amount of the order (AUD) paid for by bank transfer"
+      },
+      {
+       "name": "gift_card_amount",
+       "type": "DOUBLE",
+       "description": "Amount of the order (AUD) paid for by gift card"
+      },
+      {
+       "name": "amount",
+       "type": "DOUBLE",
+       "description": "Total amount (AUD) of the order"
+      }
+     ]
+    }
+   },
+   "type": "call.settled",
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:32.545Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 20
+    }
+   }
+  },
+  {
+   "data": {
+    "callId": "toolu_01PzZ8CqjF32RZuUg1cPTgrN",
+    "outcome": "completed",
+    "output": {
+     "builtAt": "2026-10-14T15:34:05.056138Z",
+     "name": "customers",
+     "relation": "main.customers",
+     "description": "This table has basic information about a customer, as well as some derived facts based on a customer's orders",
+     "sql": "with customer_orders as (\n    select\n        customer_id,\n        min(order_date) as first_order,\n        max(order_date) as most_recent_order,\n        count(*) as number_of_orders,\n        sum(amount) as customer_lifetime_value\n    from \"jaffle_shop\".\"main\".\"orders\"\n    group by customer_id\n)\n\nselect\n    customers.customer_id,\n    customers.first_name,\n    customers.last_name,\n    customer_orders.first_order,\n    customer_orders.most_recent_order,\n    customer_orders.number_of_orders,\n    customer_orders.customer_lifetime_value\nfrom \"jaffle_shop\".\"main\".\"stg_customers\" as customers\nleft join customer_orders\n    on customers.customer_id = customer_orders.customer_id",
+     "meta": {
+      "grain": "One row per customer, including customers with no orders.",
+      "joins": [
+       "customers.customer_id = orders.customer_id (one customer to many orders); aggregate order values before joining customer totals."
+      ],
+      "metrics": {
+       "customer_lifetime_value": "Lifetime payment amount in AUD across all orders, including returned orders; not net revenue. Use orders.amount for date-filtered totals.",
+       "number_of_orders": "All orders placed by the customer, regardless of status."
+      }
+     },
+     "dependsOn": [
+      "orders",
+      "stg_customers"
+     ],
+     "columns": [
+      {
+       "name": "customer_id",
+       "type": "INTEGER",
+       "description": "This is a unique identifier for a customer"
+      },
+      {
+       "name": "first_name",
+       "type": "VARCHAR",
+       "description": "Customer's first name. PII."
+      },
+      {
+       "name": "last_name",
+       "type": "VARCHAR",
+       "description": "Customer's last name. PII."
+      },
+      {
+       "name": "first_order",
+       "type": "DATE",
+       "description": "Date (UTC) of a customer's first order"
+      },
+      {
+       "name": "most_recent_order",
+       "type": "DATE",
+       "description": "Date (UTC) of a customer's most recent order"
+      },
+      {
+       "name": "number_of_orders",
+       "type": "BIGINT",
+       "description": "Count of the number of orders a customer has placed"
+      },
+      {
+       "name": "customer_lifetime_value",
+       "type": "DOUBLE",
+       "description": "Lifetime recorded payments in AUD across all of the customer's orders, including returned orders. Not net revenue."
+      }
+     ]
+    }
+   },
+   "type": "call.settled",
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:32.546Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 21
+    }
+   }
+  },
+  {
+   "data": {
+    "finishReason": "tool-calls",
+    "outcome": "completed",
+    "runId": "run_1"
+   },
+   "type": "model.settled",
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:32.548Z",
+    "endOfLine": false,
+    "position": {
+     "index": 0,
+     "line": 22
+    }
+   }
+  },
+  {
+   "data": {
+    "kind": "model",
+    "owner": {
+     "runId": "run_1"
+    },
+    "usage": {
+     "cacheReadTokens": 6885,
+     "cacheWriteTokens": 262,
+     "inputTokens": 7149,
+     "outputTokens": 93
+    }
+   },
+   "type": "usage.recorded",
+   "scope": {
+    "runId": "run_1",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:32.548Z",
+    "endOfLine": true,
+    "position": {
+     "index": 1,
+     "line": 22
+    }
+   }
+  },
+  {
+   "data": {
+    "owner": {
+     "turnId": "turn_0"
+    },
+    "runId": "run_2"
+   },
+   "type": "model.requested",
+   "scope": {
+    "runId": "run_2",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:32.608Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 23
+    }
+   }
+  },
+  {
+   "data": {
+    "attempt": 0,
+    "modelId": "anthropic/claude-haiku-5.5",
+    "runId": "run_2"
+   },
+   "type": "model.started",
+   "scope": {
+    "runId": "run_2",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 24
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "",
+    "kind": "reasoning",
+    "partId": "run_2.0"
+   },
+   "scope": {
+    "runId": "run_2",
+    "turnId": "turn_0"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 25
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "",
+    "partId": "run_2.0"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 26
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "T",
+    "kind": "text",
+    "partId": "run_2.1"
+   },
+   "scope": {
+    "runId": "run_2",
+    "turnId": "turn_0"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 27
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "äm",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 28
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "än",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 29
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " a",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 30
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "inei",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 31
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ston t",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 32
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ilau",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 33
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "sk",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 34
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "irjau",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 35
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ksista ei lö",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 36
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ydy ve",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 37
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "roa",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 38
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " erill",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 39
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "isen",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 40
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ä t",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 41
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ietona",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 42
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": ",",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 43
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " joten ve",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 44
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "roja ",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 45
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ei voi",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 46
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " la",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 47
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "skea yhteen",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 48
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": ".",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 49
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " T",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 50
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ilausten kirjau",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 51
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ksissa on",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 52
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " v",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 53
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ain makset",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 54
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ut summ",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 55
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "at (",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 56
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "AUD), joita",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 57
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " ei ole e",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 58
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ritelty ve",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 59
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ron",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 60
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " ",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 61
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ja veron",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 62
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "al",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 63
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "a",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 64
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "isen osu",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 65
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "uden mukaan.",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 66
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "\n\nVo",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 67
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "in kuitenkin la",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 68
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "skea mu",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 69
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ita",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 70
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " summ",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 71
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ia",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 72
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": ", jos",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 73
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " ",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 74
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ne au",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 75
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ttavat:\n\n- **",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 76
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "Kaikk",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 77
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ien t",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 78
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ilausten makset",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 79
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ut summat y",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 80
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "hteensä**, m",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 81
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "uk",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 82
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "aan l",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 83
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ukien k",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 84
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "u",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 85
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "pon",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 86
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ki",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 87
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "-",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 88
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " ja lahj",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 89
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ak",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 90
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "or",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 91
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ttim",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 92
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "aksut s",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 93
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ekä pal",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 94
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "aut",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 95
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "etut tila",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 96
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ukset. T",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 97
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ämä ",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 98
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ei ole n",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 99
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ettot",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 100
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "u",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 101
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ott",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 102
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "oa.",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 103
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "\n- **Ma",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 104
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ksut ma",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 105
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ksut",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 106
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "avo",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 107
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ittain**, es",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 108
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "imerkiksi luott",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 109
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ok",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 110
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ort",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 111
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ti, k",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 112
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "uponki",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 113
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": ", p",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 114
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ankkis",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 115
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "iirto ",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 116
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ja lahjakort",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 117
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ti.\n- **V",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 118
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ain valmiiksi to",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 119
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "imitet",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 120
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ut tilaukset** (",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 121
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "status",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 122
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " \"completed\"), jos ha",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 123
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "luat r",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 124
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ajata",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 125
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " pal",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 126
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "autuk",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 127
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "set ",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 128
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ja k",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 129
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "esken ol",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 130
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "evat tilaukset p",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 131
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ois.\n\nHu",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 132
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "omio",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 133
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "i",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 134
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " my",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 135
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ös, että t",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 136
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ämä on",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 137
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " histor",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 138
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "iallista",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 139
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " synte",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 140
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ettist",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 141
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ä es",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 142
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "imerkkid",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 143
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ataa, ",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 144
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ei re",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 145
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "aa",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 146
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "liaikaista",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 147
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " li",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 148
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "iketoimintad",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 149
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ataa. J",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 150
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "os ve",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 151
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "roer",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 152
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "itt",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 153
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ely on tarpeen,",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 154
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " se",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 155
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": " tä",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 156
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ytyy h",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 157
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "akea la",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 158
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "sk",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 159
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ut",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 160
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "us",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 161
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "- tai k",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 162
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "irjan",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 163
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "pit",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 164
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ojärjestelmästä",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 165
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": ".\n\nHa",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 166
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "luat",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 167
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ko j",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 168
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "on",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 169
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "kin nä",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 170
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "istä yhteen",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 171
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "v",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 172
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ed",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 173
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "oista, ",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 174
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ja mill",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 175
+    }
+   }
+  },
+  {
+   "data": {
+    "delta": "ä aikavälillä?",
+    "partId": "run_2.1"
+   },
+   "type": "content.delta",
+   "meta": {
+    "at": "2026-10-31T07:17:32.610Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 176
+    }
+   }
+  },
+  {
+   "data": {
+    "kind": "text",
+    "partId": "run_2.1",
+    "phase": "reply",
+    "runId": "run_2",
+    "value": "Tämän aineiston tilauskirjauksista ei löydy veroa erillisenä tietona, joten veroja ei voi laskea yhteen. Tilausten kirjauksissa on vain maksetut summat (AUD), joita ei ole eritelty veron ja veronalaisen osuuden mukaan.\n\nVoin kuitenkin laskea muita summia, jos ne auttavat:\n\n- **Kaikkien tilausten maksetut summat yhteensä**, mukaan lukien kuponki- ja lahjakorttimaksut sekä palautetut tilaukset. Tämä ei ole nettotuottoa.\n- **Maksut maksutavoittain**, esimerkiksi luottokortti, kuponki, pankkisiirto ja lahjakortti.\n- **Vain valmiiksi toimitetut tilaukset** (status \"completed\"), jos haluat rajata palautukset ja kesken olevat tilaukset pois.\n\nHuomioi myös, että tämä on historiallista synteettistä esimerkkidataa, ei reaaliaikaista liiketoimintadataa. Jos veroerittely on tarpeen, se täytyy hakea laskutus- tai kirjanpitojärjestelmästä.\n\nHaluatko jonkin näistä yhteenvedoista, ja millä aikavälillä?"
+   },
+   "type": "content.completed",
+   "scope": {
+    "runId": "run_2",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:36.971Z",
+    "endOfLine": true,
+    "position": {
+     "index": 0,
+     "line": 177
+    }
+   }
+  },
+  {
+   "data": {
+    "finishReason": "stop",
+    "outcome": "completed",
+    "runId": "run_2"
+   },
+   "type": "model.settled",
+   "scope": {
+    "runId": "run_2",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:36.971Z",
+    "endOfLine": false,
+    "position": {
+     "index": 0,
+     "line": 178
+    }
+   }
+  },
+  {
+   "data": {
+    "kind": "model",
+    "owner": {
+     "runId": "run_2"
+    },
+    "usage": {
+     "cacheReadTokens": 7147,
+     "cacheWriteTokens": 2299,
+     "inputTokens": 9448,
+     "outputTokens": 610
+    }
+   },
+   "type": "usage.recorded",
+   "scope": {
+    "runId": "run_2",
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:36.971Z",
+    "endOfLine": true,
+    "position": {
+     "index": 1,
+     "line": 178
+    }
+   }
+  },
+  {
+   "data": {
+    "outcome": "completed",
+    "reply": [
+     "run_2.1"
+    ],
+    "turnId": "turn_0"
+   },
+   "type": "turn.settled",
+   "scope": {
+    "turnId": "turn_0"
+   },
+   "meta": {
+    "at": "2026-10-31T07:17:36.984Z",
+    "endOfLine": false,
+    "position": {
+     "index": 0,
+     "line": 179
+    }
+   }
+  },
+  {
+   "data": {
+    "deliveryId": "40fc0096-d431-4833-931a-e1e688e90ae0",
+    "outcome": "handled",
+    "turnId": "turn_0"
+   },
+   "type": "delivery.settled",
+   "meta": {
+    "at": "2026-10-31T07:17:36.984Z",
+    "endOfLine": true,
+    "position": {
+     "index": 1,
+     "line": 179
+    }
+   }
+  }
+ ]
+}

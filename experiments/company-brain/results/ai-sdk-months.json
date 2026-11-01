@@ -1,0 +1,51 @@
+{
+ "id": "months",
+ "text": "Miten kuukausittaiset maksut kehittyivät, ja mikä kuukausi oli paras kokonainen kuukausi?",
+ "ms": 7834,
+ "usage": {
+  "inputTokens": 12831,
+  "inputTokenDetails": {
+   "noCacheTokens": 12831,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 1220,
+  "outputTokenDetails": {
+   "textTokens": 890,
+   "reasoningTokens": 330
+  },
+  "totalTokens": 14051
+ },
+ "steps": 4,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "customers"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select min(order_date) as first_date, max(order_date) as last_date, count(*) as orders from main.orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select strftime(order_date, '%Y-%m') as month, count(*) as orders, round(sum(amount), 2) as payments_aud, min(order_date) as first_day, max(order_date) as last_day from main.orders group by 1 order by 1"
+   }
+  }
+ ],
+ "reply": "**Lyhyesti:** Paras kokonainen kuukausi oli **maaliskuu 2018**, jolloin maksuja kertyi **622 AUD** (35 tilausta). Tammikuu oli 496 AUD ja helmikuu 415 AUD, joten kasvu oli kaksi kuukautta peräkkäin.\n\n| Kuukausi | Tilauksia | Maksut (AUD) |\n|---|---|---|\n| Tammikuu 2018 | 29 | 496 |\n| Helmikuu 2018 | 27 | 415 |\n| **Maaliskuu 2018** | **35** | **622** |\n| Huhtikuu 2018 (1.–9.4.) | 8 | 139 |\n\n**Huomioitavaa:**\n- Aineisto kattaa vain ajanjakson 1.1.–9.4.2018. Huhtikuu on osittainen, joten se ei ole kokonainen kuukausi eikä sitä voi verrata muihin. Kokonaisia kuukausia on siis vain kolme.\n- Luvut ovat tilauskohtaisia maksusummia tilauspäivän mukaan. Ne eivät ole nettotuloa tai kannattavuutta, eivätkä ne vähennä palautuksia. Palautetut tilaukset ovat mukana.\n- Kyseessä on historiallinen synteettinen esimerkkiaineisto, ei reaaliaikaista liiketoimintaa.\n\nHaluatko, että tarkastelen jotain muuta jaksoa tai rajaan tilaukset esimerkiksi vain valmistuneisiin tilauksiin?"
+}

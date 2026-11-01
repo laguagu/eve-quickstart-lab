@@ -1,0 +1,39 @@
+{
+ "id": "total",
+ "text": "Paljonko maksuja on kirjattu yhteensä?",
+ "ms": 7336,
+ "usage": {
+  "inputTokens": 11233,
+  "inputTokenDetails": {
+   "noCacheTokens": 11233,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 924,
+  "outputTokenDetails": {
+   "textTokens": 536,
+   "reasoningTokens": 388
+  },
+  "totalTokens": 12157
+ },
+ "steps": 4,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select count(*) as order_rows, count(amount) as orders_with_payments, sum(amount) as total_recorded_aud, min(order_date) as first_order, max(order_date) as last_order from main.orders"
+   }
+  }
+ ],
+ "reply": "Kirjattujen maksujen yhteissumma on **1 672 AUD**. Summa koskee 99 tilausta, joille on kirjattu maksu.\n\n- **Ajanjakso:** tilaukset on tehty 1.1.–9.4.2018. Tämä on historiallinen esimerkkidata, joten se ei kuvaa nykyistä liiketoimintaa.\n- **Mitä summa sisältää:** kaikki tilauksille kirjatut maksut, myös kuponki- ja lahjakorttimaksut, riippumatta tilauksen tilasta. Summa ei ole nettotuloa eikä kannattavuutta, eikä palautuksia ole vähennetty.\n\nJos tarkoitit maksujen lukumäärää (montako yksittäistä maksutapahtumaa on), kerro se. Tämän tiedon saa erikseen, mutta en ole vielä laskenut sitä. Haluatko myös jaottelun maksutavoittain tai kuukausittain?"
+}

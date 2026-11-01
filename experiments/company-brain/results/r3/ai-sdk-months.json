@@ -1,0 +1,51 @@
+{
+ "id": "months",
+ "text": "Miten kuukausittaiset maksut kehittyivät, ja mikä kuukausi oli paras kokonainen kuukausi?",
+ "ms": 8759,
+ "usage": {
+  "inputTokens": 17454,
+  "inputTokenDetails": {
+   "noCacheTokens": 17454,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 1324,
+  "outputTokenDetails": {
+   "textTokens": 947,
+   "reasoningTokens": 377
+  },
+  "totalTokens": 18778
+ },
+ "steps": 5,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "customers"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select min(order_date) as first_date, max(order_date) as last_date, count(*) as orders from main.orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select strftime(order_date, '%Y-%m') as month, count(*) as orders, round(sum(amount), 2) as payments_aud, round(avg(amount), 2) as avg_order_aud, max(order_date) as last_day_in_data from main.orders group by 1 order by 1"
+   }
+  }
+ ],
+ "reply": "**Paras täysi kuukausi oli maaliskuu 2018**, jolloin maksuja kertyi **622 AUD** (35 tilausta).\n\n| Kuukausi (2018) | Tilauksia | Maksut (AUD) | Keskiarvo / tilaus (AUD) |\n|---|---|---|---|\n| Tammikuu | 29 | 496 | 17,10 |\n| Helmikuu | 27 | 415 | 15,37 |\n| Maaliskuu | 35 | 622 | 17,77 |\n| Huhtikuu (1.–9.4.) | 8 | 139 | 17,38 |\n\n**Kehitys:** Helmikuu laski tammikuusta noin 16 %. Maaliskuu nousi helmikuusta noin 50 % ja oli kolmen kuukauden korkein. Tilausten määrä ja keskimääräinen tilausarvo kehittyivät samansuuntaisesti.\n\n**Huomioitavaa:**\n- Huhtikuu on kesken, joten se ei ole vertailukelpoinen eikä voi olla paras kokonainen kuukausi. Aineiston viimeinen päivä on 9.4.2018.\n- Luvut ovat tallennettuja maksusummia tilauspäivän mukaan. Ne sisältävät kupongit ja lahjakortit eivätkä vähennä palautettuja tilauksia, joten ne eivät ole nettotuloa tai kannattavuutta.\n- Data on historiallista synteettistä esimerkkidataa, ei nykyistä liiketoimintaa.\n\nHaluatko, että tarkastelen tuloksia ilman palautettuja tilauksia tai pelkästään valmiiksi toimitettuja tilauksia?"
+}

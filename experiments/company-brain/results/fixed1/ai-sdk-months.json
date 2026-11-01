@@ -1,0 +1,45 @@
+{
+ "id": "months",
+ "text": "Miten kuukausittaiset maksut kehittyivät, ja mikä kuukausi oli paras kokonainen kuukausi?",
+ "ms": 8494,
+ "usage": {
+  "inputTokens": 15248,
+  "inputTokenDetails": {
+   "noCacheTokens": 15248,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 1305,
+  "outputTokenDetails": {
+   "textTokens": 876,
+   "reasoningTokens": 429
+  },
+  "totalTokens": 16553
+ },
+ "steps": 5,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select min(order_date) as first_date, max(order_date) as last_date, count(*) as orders from main.orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select strftime(order_date, '%Y-%m') as month, count(*) as orders, round(sum(amount), 2) as recorded_payments_aud, min(order_date) as first_day, max(order_date) as last_day from main.orders group by 1 order by 1"
+   }
+  }
+ ],
+ "reply": "**Paras kokonainen kuukausi oli maaliskuu 2018**, jolloin kirjattuja maksuja kertyi 622 AUD (35 tilausta).\n\n| Kuukausi | Tilauksia | Kirjatut maksut (AUD) | Muutos edellisestä |\n|---|---|---|---|\n| Tammikuu 2018 | 29 | 496 | – |\n| Helmikuu 2018 | 27 | 415 | −81 (−16 %) |\n| Maaliskuu 2018 | 35 | 622 | +207 (+50 %) |\n| Huhtikuu 2018 (1.–9.4.) | 8 | 139 | ei vertailukelpoinen, keskeneräinen |\n\n**Kehitys:** Tammikuusta helmikuuhun maksut laskivat, ja helmikuusta maaliskuuhun ne nousivat selvästi. Maaliskuu oli kolmen kokonaisen kuukauden korkein.\n\n**Huomioita:**\n- Aineisto kattaa vain tammi–huhtikuun 2018 alun. Huhtikuu on kesken, joten se ei ole mukana kuukausivertailussa.\n- \"Kirjatut maksut\" tarkoittaa tilausten maksujen kokonaissummaa kaikista tilaustiloista, myös palautuksista ja palautuksessa olevista tilauksista. Se ei ole nettotuloa eikä kannattavuutta. Jos haluat vain valmiit tilaukset tai palautukset vähennettynä, kerro se.\n- Aineisto on historiallinen synteettinen esimerkkiaineisto, ei tämänhetkinen liiketoiminta."
+}

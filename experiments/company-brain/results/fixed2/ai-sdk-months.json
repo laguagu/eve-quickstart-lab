@@ -1,0 +1,39 @@
+{
+ "id": "months",
+ "text": "Miten kuukausittaiset maksut kehittyivät, ja mikä kuukausi oli paras kokonainen kuukausi?",
+ "ms": 7997,
+ "usage": {
+  "inputTokens": 11394,
+  "inputTokenDetails": {
+   "noCacheTokens": 11394,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 1280,
+  "outputTokenDetails": {
+   "textTokens": 847,
+   "reasoningTokens": 433
+  },
+  "totalTokens": 12674
+ },
+ "steps": 4,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select strftime(order_date, '%Y-%m') as kuukausi, count(*) as tilauksia, round(sum(amount),2) as maksut_aud, min(order_date) as ensimmainen, max(order_date) as viimeinen, (select min(order_date) from main.orders) as data_alku, (select max(order_date) from main.orders) as data_loppu from main.orders group by 1 order by 1"
+   }
+  }
+ ],
+ "reply": "**Lyhyesti:** Paras kokonainen kuukausi oli **maaliskuu 2018**, jolloin kirjattuja maksuja kertyi **622 AUD** (35 tilausta). Kuukausittain kehitys oli tämä:\n\n| Kuukausi | Tilauksia | Maksut (AUD) | Muutos edellisestä |\n|---|---|---|---|\n| Tammikuu 2018 | 29 | 496 | – |\n| Helmikuu 2018 | 27 | 415 | laski 16 % |\n| Maaliskuu 2018 | 35 | 622 | nousi 50 % |\n| Huhtikuu 2018 (1.–9.4.) | 8 | 139 | osittainen kuukausi |\n\n- **Kehitys:** Tammikuusta helmikuuhun maksut laskivat, ja helmikuusta maaliskuuhun ne nousivat selvästi. Huhtikuun lukua ei voi verrata muihin, koska aineisto päättyy 9.4.2018.\n- **Huomioitavaa:** Luvut ovat kirjattuja maksuja tilauksittain, eivätkä ne ole nettotuloa tai kannattavuutta. Mukana ovat kaikki tilaustilat, myös palautetut tilaukset. Tilauksen päivämäärä on tilauspäivä, ei maksupäivä.\n- **Aineisto:** Kyseessä on historiallinen, synteettinen esimerkkiaineisto, joka kattaa tammikuun 1. päivästä 2018 huhtikuun 9. päivään 2018. Jos tarvitset uudempaa dataa, sitä ei tässä järjestelmässä ole."
+}

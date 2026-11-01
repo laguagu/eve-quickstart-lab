@@ -1,0 +1,39 @@
+{
+ "id": "total",
+ "text": "Paljonko maksuja on kirjattu yhteensä?",
+ "ms": 6889,
+ "usage": {
+  "inputTokens": 11314,
+  "inputTokenDetails": {
+   "noCacheTokens": 11314,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 945,
+  "outputTokenDetails": {
+   "textTokens": 541,
+   "reasoningTokens": 404
+  },
+  "totalTokens": 12259
+ },
+ "steps": 4,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select count(*) as order_count, count(amount) as orders_with_payments, sum(amount) as total_recorded_aud, min(order_date) as first_order, max(order_date) as last_order from main.orders"
+   }
+  }
+ ],
+ "reply": "Kirjattuja maksuja on yhteensä **1 672 AUD**. Ne liittyvät 99 tilaukseen, ja jokaisella tilauksella on kirjattu maksu.\n\n| Mitä | Arvo |\n|---|---|\n| Kirjatut maksut yhteensä | 1 672 AUD |\n| Tilauksia, joilla on maksu | 99 |\n| Ajanjakso (tilauspäivät) | 1.1.2018 – 9.4.2018 |\n\nTämä on kirjattujen maksujen summa kaikilta tilausstatuksilta, myös palautetuilta. Se ei ole nettomyynti eikä kate. Aineisto on historiallista esimerkkidataa, ei reaaliaikainen.\n\nJos tarkoitit maksujen lukumäärää (esim. kuinka monta yksittäistä maksutapahtumaa), kerro se, niin tarkistan asian. Haluatko myös jakauman tilausstatuksittain tai kuukausittain?"
+}

@@ -1,0 +1,45 @@
+{
+ "id": "months",
+ "text": "Miten kuukausittaiset maksut kehittyivät, ja mikä kuukausi oli paras kokonainen kuukausi?",
+ "ms": 8459,
+ "usage": {
+  "inputTokens": 15204,
+  "inputTokenDetails": {
+   "noCacheTokens": 15204,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 1226,
+  "outputTokenDetails": {
+   "textTokens": 879,
+   "reasoningTokens": 347
+  },
+  "totalTokens": 16430
+ },
+ "steps": 5,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select min(order_date) as first_date, max(order_date) as last_date, count(*) as orders from main.orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select strftime(order_date, '%Y-%m') as month, count(*) as orders, round(sum(amount), 2) as payments_aud, min(order_date) as first_day, max(order_date) as last_day from main.orders where amount is not null group by 1 order by 1"
+   }
+  }
+ ],
+ "reply": "**Lyhyesti:** Paras kokonainen kuukausi oli **maaliskuu 2018**, jolloin kirjatut maksut olivat **622 AUD** (35 tilausta). Kuukausittainen kehitys oli seuraava:\n\n| Kuukausi | Maksut (AUD) | Tilauksia | Muutos edellisestä |\n|---|---|---|---|\n| Tammikuu 2018 | 496 | 29 | – |\n| Helmikuu 2018 | 415 | 27 | laski noin 16 % |\n| Maaliskuu 2018 | 622 | 35 | nousi noin 50 % |\n| Huhtikuu 2018 (1.–9.4.) | 139 | 8 | ei vertailukelpoinen, osittainen kuukausi |\n\n**Kehitys:** Tammikuusta helmikuuhun maksut laskivat, ja helmikuusta maaliskuuhun ne nousivat selvästi. Maaliskuu oli siis selvästi vahvin kokonainen kuukausi.\n\n**Huomioitavaa:**\n- Data kattaa ajanjakson 1.1.–9.4.2018. Tämä on historiallista esimerkkidataa, ei reaaliaikaista liiketoimintaa, joten \"viimeisin kuukausi\" tarkoittaa tässä huhtikuuta 2018.\n- Luvut ovat kirjattuja maksuja tilausten tekopäivän mukaan, eivätkä ne ole nettotuloa tai kannattavuutta. Mukana ovat kaikki tilaustilat, myös palautetut tilaukset, koska palautuksia ei ole erotettu omaksi lukuna."
+}

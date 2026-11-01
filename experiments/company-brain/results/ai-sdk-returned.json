@@ -1,0 +1,39 @@
+{
+ "id": "returned",
+ "text": "Montako tilausta on palautettu kokonaan, ja paljonko niiden maksut olivat?",
+ "ms": 5694,
+ "usage": {
+  "inputTokens": 10555,
+  "inputTokenDetails": {
+   "noCacheTokens": 10555,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 653,
+  "outputTokenDetails": {
+   "textTokens": 446,
+   "reasoningTokens": 207
+  },
+  "totalTokens": 11208
+ },
+ "steps": 4,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select count(*) as returned_orders, sum(amount) as total_payments_aud, min(order_date) as first_order, max(order_date) as last_order from main.orders where status = 'returned'"
+   }
+  }
+ ],
+ "reply": "Palautettuja tilauksia on **4**, ja niiden maksut yhteensä ovat **49 AUD**.\n\nMukana ovat tilaukset, joiden tila on \"palautettu\" eli asiakas on palauttanut ne ja palautus on vastaanotettu varastossa. Tilaukset on tehty 1.–20.1.2018. Tämä on historiallinen esimerkkidata, ei nykyistä liiketoimintaa.\n\nLuku 49 AUD on tilausten kirjatut maksut, ei palautusten jälkeinen tulo. Järjestelmässä ei ole erillistä hyvitysrekisteriä, joten en pysty kertomaan, kuinka suuri osa maksuista on palautettu asiakkaalle."
+}

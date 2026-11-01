@@ -1,0 +1,84 @@
+{
+ "sessionId": "wrun_01M68DCYZZM9KX3WD1V1D4FSE7",
+ "killedPid": "9660",
+ "killedAt": "2026-10-31T07:22:19.791Z",
+ "seen": [
+  {
+   "type": "session.started",
+   "position": {
+    "index": 0,
+    "line": 0
+   }
+  },
+  {
+   "type": "delivery.admitted",
+   "position": {
+    "index": 1,
+    "line": 0
+   }
+  },
+  {
+   "type": "turn.started",
+   "position": {
+    "index": 0,
+    "line": 1
+   }
+  },
+  {
+   "type": "delivery.consumed",
+   "position": {
+    "index": 1,
+    "line": 1
+   }
+  },
+  {
+   "type": "model.requested",
+   "position": {
+    "index": 0,
+    "line": 2
+   }
+  },
+  {
+   "type": "model.started",
+   "position": {
+    "index": 0,
+    "line": 3
+   }
+  },
+  {
+   "type": "content.delta",
+   "position": {
+    "index": 0,
+    "line": 4
+   }
+  },
+  {
+   "type": "content.delta",
+   "position": {
+    "index": 0,
+    "line": 5
+   }
+  },
+  {
+   "type": "call.requested",
+   "position": {
+    "index": 0,
+    "line": 6
+   }
+  },
+  {
+   "type": "call.started",
+   "position": {
+    "index": 0,
+    "line": 7
+   }
+  },
+  {
+   "type": "call.settled",
+   "position": {
+    "index": 0,
+    "line": 8
+   }
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "id": "total",
+ "text": "Paljonko maksuja on kirjattu yhteensä?",
+ "ms": 5910,
+ "usage": {
+  "inputTokens": 7770,
+  "inputTokenDetails": {
+   "noCacheTokens": 7770,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 693,
+  "outputTokenDetails": {
+   "textTokens": 430,
+   "reasoningTokens": 263
+  },
+  "totalTokens": 8463
+ },
+ "steps": 3,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "customers"
+   }
+  }
+ ],
+ "reply": "Tämän aineiston perusteella veroja ei voi laskea, koska siinä ei ole veroerittelyä. Tilausten tiedoissa on vain asiakkaiden maksamat summat (AUD) ja maksutavat: luottokortti, kuponki, pankkisiirto ja lahjakortti. Veron osuutta ei ole eroteltu erikseen, joten en voi kertoa kirjattujen verojen yhteissummaa.\n\nJos tarvitset jonkin muun luvun, voin laskea esimerkiksi kaikkien tilausten maksettujen summien yhteissumman tai jakaa sen maksutavoittain. Huomaa, että tämä on historiallista, synteettistä esimerkkidataa, eikä se edusta nykyistä liiketoimintaa.\n\nHaluatko, että laskenhetkellä kirjattujen maksujen kokonaissumman?"
+}

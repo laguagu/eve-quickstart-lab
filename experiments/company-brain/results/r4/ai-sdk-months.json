@@ -1,0 +1,51 @@
+{
+ "id": "months",
+ "text": "Miten kuukausittaiset maksut kehittyivät, ja mikä kuukausi oli paras kokonainen kuukausi?",
+ "ms": 7843,
+ "usage": {
+  "inputTokens": 17429,
+  "inputTokenDetails": {
+   "noCacheTokens": 17429,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 1203,
+  "outputTokenDetails": {
+   "textTokens": 940,
+   "reasoningTokens": 263
+  },
+  "totalTokens": 18632
+ },
+ "steps": 5,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "customers"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select min(order_date) as first_date, max(order_date) as last_date, count(*) as orders from main.orders"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select strftime(order_date, '%Y-%m') as month, count(*) as orders, round(sum(amount), 2) as payments_aud, round(avg(amount), 2) as avg_order_aud, min(order_date) as first_day, max(order_date) as last_day from main.orders group by 1 order by 1"
+   }
+  }
+ ],
+ "reply": "**Paras kokonainen kuukausi oli maaliskuu 2018**, jolloin maksuja kertyi yhteensä **622 AUD** 35 tilauksesta.\n\n| Kuukausi (2018) | Tilauksia | Maksut yhteensä (AUD) | Keskimääräinen tilaus (AUD) |\n|---|---|---|---|\n| Tammikuu | 29 | 496 | 17,10 |\n| Helmikuu | 27 | 415 | 15,37 |\n| **Maaliskuu** | **35** | **622** | **17,77** |\n| Huhtikuu (1.–9.4.) | 8 | 139 | 17,38 |\n\n**Kehitys:** Tammikuusta helmikuuhun maksut laskivat noin 16 % (496 → 415 AUD), minkä jälkeen maaliskuussa ne nousivat selvästi, noin 50 % helmikuusta (622 AUD). Maaliskuun nousu näkyy sekä tilausmäärässä että keskimääräisessä tilauksessa.\n\n**Huomioitavaa:**\n- Huhtikuu on kesken, koska aineisto päättyy 9.4.2018, joten sitä ei voi verrata kokonaisiin kuukausiin.\n- Luvut ovat tilauksiin kirjattuja maksuja, mukaan lukien palautetut tilaukset. Ne eivät ole nettotuloa tai kannattavuutta.\n- Aineisto on historiallista synteettistä esimerkkidataa vuodelta 2018, ei nykyistä liiketoimintaa. Jos haluat nykyisempiä lukuja, niitä ei tästä aineistosta löydy."
+}

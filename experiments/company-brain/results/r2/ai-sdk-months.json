@@ -1,0 +1,45 @@
+{
+ "id": "months",
+ "text": "Miten kuukausittaiset maksut kehittyivät, ja mikä kuukausi oli paras kokonainen kuukausi?",
+ "ms": 7789,
+ "usage": {
+  "inputTokens": 12662,
+  "inputTokenDetails": {
+   "noCacheTokens": 12662,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 1202,
+  "outputTokenDetails": {
+   "textTokens": 822,
+   "reasoningTokens": 380
+  },
+  "totalTokens": 13864
+ },
+ "steps": 4,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "customers"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select strftime(order_date, '%Y-%m') as kuukausi, min(order_date) as ensimmainen_paiva, max(order_date) as viimeinen_paiva, count(*) as tilauksia, round(sum(amount), 2) as maksut_aud from main.orders group by 1 order by 1"
+   }
+  }
+ ],
+ "reply": "Paras kokonainen kuukausi oli **maaliskuu 2018**, jolloin maksuja kertyi **622 AUD** 35 tilauksesta.\n\n| Kuukausi | Tilauksia | Maksut (AUD) |\n|---|---|---|\n| Tammikuu 2018 | 29 | 496 |\n| Helmikuu 2018 | 27 | 415 |\n| **Maaliskuu 2018** | **35** | **622** |\n| Huhtikuu 2018 (osittainen, 2.–9.4.) | 8 | 139 |\n\nKehitys oli tammikuusta maaliskuuhun nouseva: maksut laskivat helmikuussa 496:sta 415 AUD:iin ja nousivat maaliskuussa 622 AUD:iin. Huhtikuun lukua ei voi verrata muihin kuukausiin, koska aineisto päättyy 9.4.2018.\n\nHuomioitavaa:\n- Aineisto on historiallista esimerkkidataa ja kattaa tammikuun 2018 alusta huhtikuun 9. päivään 2018.\n- Luvut ovat tilausten kirjattuja maksuja tilauspäivän mukaan. Ne sisältävät kupongit ja lahjakortit sekä palautetut tilaukset, eikä niistä ole vähennetty palautuksia. Ne eivät siis ole nettotuloa eivätkä kannattavuutta.\n\nHaluatko, että tarkastelen tilauksia pelkästään valmistuneina tai vertaan kuukausia toisiinsa muulla tavalla?"
+}

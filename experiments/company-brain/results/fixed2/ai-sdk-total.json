@@ -1,0 +1,45 @@
+{
+ "id": "total",
+ "text": "Paljonko maksuja on kirjattu yhteensä?",
+ "ms": 8677,
+ "usage": {
+  "inputTokens": 16777,
+  "inputTokenDetails": {
+   "noCacheTokens": 16777,
+   "cacheReadTokens": 0,
+   "cacheWriteTokens": 0
+  },
+  "outputTokens": 1168,
+  "outputTokenDetails": {
+   "textTokens": 601,
+   "reasoningTokens": 567
+  },
+  "totalTokens": 17945
+ },
+ "steps": 5,
+ "calls": [
+  {
+   "tool": "list_models",
+   "input": {}
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "orders"
+   }
+  },
+  {
+   "tool": "get_model",
+   "input": {
+    "model": "customers"
+   }
+  },
+  {
+   "tool": "query_sql",
+   "input": {
+    "sql": "select count(*) as orders_total, count(amount) as orders_with_recorded_payments, sum(amount) as total_recorded_aud, min(order_date) as first_order_date, max(order_date) as last_order_date from main.orders"
+   }
+  }
+ ],
+ "reply": "Kirjattuja maksuja on yhteensä **1 672 AUD** (noin 99 tilausta, joille on kirjattu maksu).\n\n- **Ajanjakso:** 1.1.2018–9.4.2018. Tiedot ovat historiallista esimerkkidataa, joten ne eivät kuvaa nykyistä liiketoimintaa.\n- **Sisältää:** kaikki tilaustilat, myös palautetut tilaukset, sekä kuponki- ja lahjakorttimaksut.\n- **Ei ole nettotuloa:** luku on kirjattujen maksujen summa, ei tuloa, josta olisi vähennetty palautukset tai kulut.\n\nJos tarkoitit maksutapahtumien lukumäärää, en voi laskea sitä suoraan, koska käytettävissä olevat tiedot ovat tilauskohtaisia. Jos haluat esimerkiksi vain valmiiksi toimitetut tilaukset tai tietyn aikavälin, kerro se."
+}
