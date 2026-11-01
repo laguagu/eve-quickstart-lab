@@ -28,6 +28,6 @@ AI SDK script none.
 ## crash-test: a server killed in the middle of a turn
 
 `crash.ts` starts a turn of three slow steps and kills the server during the second. `data/ticks.log` is what
-the steps wrote, and it stops at `start b`. **Whether the turn went on after a restart is not recorded here,**
-so this shows how to run the trial and not that a turn survives. `check.mjs` reads the session back: run
-it after a restart before relying on eve's durability.
+the steps wrote, and it stops at `start b`. **The turn did not recover in either run on Windows** (recorded
+in `~/.agents/docs/agent-workflows.md`), which is why eve is not used in web applications here. `check.mjs`
+reads the session back: repeat this on Linux, the deployment target, before relying on eve's durability.
